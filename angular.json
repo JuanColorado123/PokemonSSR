@@ -11,7 +11,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular/build:application",
           "options": {
             "outputPath": "dist/pokemon-ssr-app",
             "index": "src/index.html",
@@ -59,18 +59,6 @@
             }
           },
           "defaultConfiguration": "production"
-        },
-        "serve": {
-          "builder": "@angular/build:application",
-          "configurations": {
-            "production": {
-              "buildTarget": "pokemon-ssr-app:build:production"
-            },
-            "development": {
-              "buildTarget": "pokemon-ssr-app:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
