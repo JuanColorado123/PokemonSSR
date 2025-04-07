@@ -1,11 +1,8 @@
-import { mergeApplicationConfig, ApplicationConfig } from '@angular/core';
-import { provideServerRendering } from '@angular/platform-server';
-import { appConfig } from './app.config';
+import { CommonEngine } from '@angular/ssr/node';
+import { render } from '@netlify/angular-runtime/common-engine.mjs';
 
-const serverConfig: ApplicationConfig = {
-  providers: [
-    provideServerRendering(),
-  ]
-};
+const commonEngine = new CommonEngine();
 
-export const config = mergeApplicationConfig(appConfig, serverConfig);
+export async function netlifyCommonEngineHandler(request: Request, context: any): Promise<Response> {
+  return await render(commonEngine);
+}
