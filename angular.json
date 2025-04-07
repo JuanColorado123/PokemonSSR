@@ -60,17 +60,15 @@
           },
           "defaultConfiguration": "production"
         },
-        "serve": {
+        "server": {
           "builder": "@angular/build:application",
-          "configurations": {
-            "production": {
-              "buildTarget": "pokemon-ssr-app:build:production"
-            },
-            "development": {
-              "buildTarget": "pokemon-ssr-app:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
+          "options": {
+            "outputPath": "dist/pokemon-ssr-app/server",
+            "browser": "pokemon-ssr-app:build",
+            "server": "pokemon-ssr-app:server",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "css"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
