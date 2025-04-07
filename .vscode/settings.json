@@ -1,0 +1,16 @@
+{
+    "angular-schematics.schematicsDefaultOptions": {
+        "angular-*": {
+            "externalTemplate": true,
+            "skipStyle": true
+        }
+    },
+    "cSpell.words": [
+        "firered",
+        "leafgreen",
+        "pokemon",
+        "pokemons",
+        "prerender",
+        "soulsilver"
+    ]
+}

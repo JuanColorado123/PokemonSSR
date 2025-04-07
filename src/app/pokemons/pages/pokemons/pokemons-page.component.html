@@ -1,0 +1,18 @@
+<h1 class="text-3xl text-accent">Listado de Pokemons</h1>
+<h2 class="text-xl text-accent">Pagina actual: <span class="text-secondary">{{currentPage()}}</span></h2>
+
+<hr class="my-2">
+
+@if (!pokemonsResource.isLoading() && pokemonsResource.hasValue()) {
+  <pokemon-list [pokemons]="pokemonsResource.value()" class="animate-fadeIn"/>
+}
+@if (pokemonsResource.isLoading()) {
+  <pokemon-list-skeleton />
+}
+
+
+<div class="flex justify-center join my-5">
+  <button (click)="pokemonPagination(-1)" class="join-item btn btn-info mx-5">←</button>
+  <button class="join-item btn btn-info mx-5">Page {{currentPage()}}</button>
+  <button (click)="pokemonPagination(1)" class="join-item btn btn-info">→</button>
+</div>
